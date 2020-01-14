@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenMRS RefApp</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/css/uikit.min.css" />
+    
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit-icons.min.js"></script>
+  </head>
+  <body>
+  <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+    <nav class="uk-navbar-container uk-background-muted" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="#">
+          <img src="./assets/OpenMRS-logo.svg" height=75>
+        </a>
+      </div>
+      <div class="uk-navbar-center"></div>
+      <div class="uk-navbar-right">
+        <button class="uk-button uk-button-secondary" type="button">
+          <span uk-icon="icon: user"></span>
+          Admin
+          <span uk-icon="icon: triangle-down"></span>
+        </button>
+        <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+              <li class="uk-active">Admin</li>
+              <li class="uk-nav-divider"></li>
+              <li><a href="#">User 1</a></li>
+              <li><a href="#">User 2</a></li>
+              <li><a href="#">User 3</a></li>
+              <li><a href="#">User 4</a></li>
+            </ul>
+        </div>
+        <button class="uk-button uk-button-secondary" type="button">
+          <span uk-icon="icon: location"></span>
+          Laboratory
+          <span uk-icon="icon: triangle-down"></span>
+        </button>
+        <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+              <li class="uk-active">Laboratory</li>
+              <li class="uk-nav-divider"></li>
+              <li><a href="#">Inpatient ward</a></li>
+              <li><a href="#">Outpatient ward</a></li>
+              <li><a href="#">Registration desk</a></li>
+              <li><a href="#">Waiting room</a></li>
+            </ul>
+        </div>
+        <button class="uk-button uk-button-secondary" type="button">
+          Logout
+          <span uk-icon="icon: sign-out"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  </body>
+</html>
