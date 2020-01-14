@@ -1,62 +1,129 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OpenMRS RefApp</title>
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/css/uikit.min.css" />
-    
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit-icons.min.js"></script>
-  </head>
-  <body>
-  <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
-    <nav class="uk-navbar-container uk-background-muted" uk-navbar>
-      <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="#">
-          <img src="./assets/OpenMRS-logo.svg" height=75>
-        </a>
-      </div>
-      <div class="uk-navbar-center"></div>
-      <div class="uk-navbar-right">
-        <button class="uk-button uk-button-secondary" type="button">
-          <span uk-icon="icon: user"></span>
-          Admin
-          <span uk-icon="icon: triangle-down"></span>
-        </button>
-        <div uk-dropdown>
-            <ul class="uk-nav uk-dropdown-nav">
-              <li class="uk-active">Admin</li>
-              <li class="uk-nav-divider"></li>
-              <li><a href="#">User 1</a></li>
-              <li><a href="#">User 2</a></li>
-              <li><a href="#">User 3</a></li>
-              <li><a href="#">User 4</a></li>
-            </ul>
-        </div>
-        <button class="uk-button uk-button-secondary" type="button">
-          <span uk-icon="icon: location"></span>
-          Laboratory
-          <span uk-icon="icon: triangle-down"></span>
-        </button>
-        <div uk-dropdown>
-            <ul class="uk-nav uk-dropdown-nav">
-              <li class="uk-active">Laboratory</li>
-              <li class="uk-nav-divider"></li>
-              <li><a href="#">Inpatient ward</a></li>
-              <li><a href="#">Outpatient ward</a></li>
-              <li><a href="#">Registration desk</a></li>
-              <li><a href="#">Waiting room</a></li>
-            </ul>
-        </div>
-        <button class="uk-button uk-button-secondary" type="button">
-          Logout
-          <span uk-icon="icon: sign-out"></span>
-        </button>
-      </div>
-    </nav>
-  </div>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OpenMRS RefApp</title>
+		<!-- UIkit CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/css/uikit.min.css" />
+		
+		<!-- UIkit JS -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.7/dist/js/uikit-icons.min.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+			<nav class="uk-navbar-container uk-background-secondary" uk-navbar>
+				<div class="uk-navbar-left">
+					<a class="uk-navbar-item uk-logo" href="#">
+						<img src="./assets/OpenMRS-logo.svg" style="height: 50pt; margin: 5px">
+					</a>
+				</div>
+				<div class="uk-navbar-center"></div>
+				<div class="uk-navbar-right">
+					<button class="uk-button uk-button-default uk-margin-small-right " type="button">
+						<span uk-icon="icon: user"></span>
+						Admin
+						<span uk-icon="icon: triangle-down"></span>
+					</button>
+					<div uk-dropdown>
+							<ul class="uk-nav uk-dropdown-nav">
+								<li class="uk-active"><a href="#">Admin</a></li>
+								<li class="uk-nav-divider"></li>
+								<li><a href="#">User 1</a></li>
+								<li><a href="#">User 2</a></li>
+								<li><a href="#">User 3</a></li>
+								<li><a href="#">User 4</a></li>
+							</ul>
+					</div>
+					<button class="uk-button uk-button-default uk-margin-small-right" type="button">
+						<span uk-icon="icon: location"></span>
+						Laboratory
+						<span uk-icon="icon: triangle-down"></span>
+					</button>
+					<div uk-dropdown>
+							<ul class="uk-nav uk-dropdown-nav">
+								<li class="uk-active">Laboratory</li>
+								<li class="uk-nav-divider"></li>
+								<li><a href="#">Inpatient ward</a></li>
+								<li><a href="#">Outpatient ward</a></li>
+								<li><a href="#">Registration desk</a></li>
+								<li><a href="#">Waiting room</a></li>
+							</ul>
+					</div>
+					<button class="uk-button uk-button-default uk-margin-small-right" type="button">
+						Logout
+						<span uk-icon="icon: sign-out"></span>
+					</button>
+				</div>
+			</nav>
+		</div>
+		
+		<button class="uk-button uk-pill uk-button-primary uk-align-center" uk-toggle="target: #regular-ui, #admin-ui; animation: uk-animation-slide-bottom">
+			Switch UI
+		</button>
+		
+		<div class="uk-alert-success uk-align-center uk-witdh-5-6 uk-text-center" uk-alert id="regular-ui">
+			<big>Logged in as <b id="user">User</b> at <b>Laboratory</b></big>
+		</div>
+		
+		<div class="uk-alert-success uk-align-center uk-witdh-5-6 uk-text-center" uk-alert id="admin-ui" hidden>
+			<big>Logged in as <b id="user">Admin</b> at <b>Laboratory</b></big>
+		</div>
+		
+
+		<div class="uk-text-center uk-grid-medium uk-align-center uk-width-5-6 uk-flex uk-flex-center" uk-grid id="regular-ui">
+		
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: search; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Find Patient Records</div>
+			</div>
+			
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: calendar; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Active Visits</div>
+			</div>
+			
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: user; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Register a Patient</div>
+			</div>
+			
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: lifesaver; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Capture Vitals</div>
+			</div>
+			
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: calendar; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Appointment Scheduling</div>
+			</div>
+			
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: file-text; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Reports</div>
+			</div>
+		</div>
+		
+		<div class="uk-text-center uk-grid-medium uk-align-center uk-width-5-6 uk-flex uk-flex-center" uk-grid id="admin-ui" hidden>
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: database; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Data Management</div>
+			</div>
+			
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: server; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">Configure Metadata</div>
+			</div>
+			
+			<div class="uk-card uk-card-default uk-box-shadow-medium uk-box-shadow-hover-large uk-card-body" style="width: 12vw; height: 10vw; margin: 12px">
+				<span uk-icon="icon: settings; ratio: 4" class="uk-flex uk-flex-center uk-flex-middle"></span>
+				<div class="uk-flex uk-flex-center">System Administration</div>
+			</div>
+		</div>
+		
+	</body>
 </html>
